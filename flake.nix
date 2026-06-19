@@ -34,7 +34,7 @@
         
         nixosConfigurations = {
           # Configuration par défaut (pour une machine générique)
-          asso-ciel = lib.nixosSystem {
+          neoteknix = lib.nixosSystem {
             inherit system pkgs lib;
             
             modules = [
@@ -52,8 +52,8 @@
                 console.keyMap = "fr";
                 console.font = "Lat2-Terminus16";
 
-                networking.hostName = "asso-ciel";
-                networking.hostId = "deadbeef";
+                networking.hostName = "neoteknix";
+                networking.hostId = "userId";
 
                 # ---------------------------------------------------------------------------
                 # Matériel
@@ -84,15 +84,20 @@
                 # 🖥️  ENVIRONNEMENT GRAPHIQUE
                 # =======================================================================
 
-                services.xserver = {
-                  enable = true;
-                  libinput.enable = true;
-                  libinput.touchpad.tapping = true;
-                  libinput.touchpad.naturalScrolling = true;
-                  desktopManager.gnome.enable = true;
-                  displayManager.gdm.enable = true;
-                  displayManager.defaultSession = "gnome";
-                };
+                # Désactivation de l'interface graphique
+                services.xserver.enable = false;
+                services.xserver.desktopManager.gnome.enable = false;
+                services.xserver.displayManager.gdm.enable = false;
+
+                #services.xserver = {
+                #  enable = true;
+                #  libinput.enable = true;
+                #  libinput.touchpad.tapping = true;
+                #  libinput.touchpad.naturalScrolling = true;
+                #  desktopManager.gnome.enable = true;
+                #  displayManager.gdm.enable = true;
+                #  displayManager.defaultSession = "gnome";
+                #};
 
                 services.gnome = {
                   gnome-shell-extensions = with pkgs.gnomeShellExtensions; [
