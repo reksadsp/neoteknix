@@ -140,6 +140,7 @@
     gitkraken            # Client Git graphique (via AppImage ou Flatpak)
     
     # ⚡ IDE et éditeurs
+    arduino-ide
     vscode               # Visual Studio Code (via flatpak ou package)
     vscodium             # Alternative libre à VS Code
     geany                # Éditeur léger
