@@ -84,8 +84,8 @@
                 # 🖥️  ENVIRONNEMENT GRAPHIQUE
                 # =======================================================================
 
+                services.xserver.enable = true;
                 # Désactivation de l'interface graphique
-                services.xserver.enable = false;
                 services.xserver.desktopManager.gnome.enable = false;
                 services.xserver.displayManager.gdm.enable = false;
 
