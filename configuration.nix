@@ -18,7 +18,7 @@
   console.keyMap = "fr";
   console.font = "Lat2-Terminus16";
   # Nom de la machine (à personnaliser par PC)
-  networking.hostName = "asso-ciel";
+  networking.hostName = "neotechnique";
   networking.hostId = "deadbeef";
   # ---------------------------------------------------------------------------
   # Matériel
@@ -35,29 +35,32 @@
   # =============================================================================
   
   # Activer le serveur X
-  services.xserver = {
-    enable = true;
-    libinput.enable = true;
-    libinput.touchpad.tapping = true;
-    libinput.touchpad.naturalScrolling = true;
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
-    displayManager.defaultSession = "gnome";
-  };
+  #services.xserver = {
+  #  enable = true;
+  #  libinput.enable = true;
+  #  libinput.touchpad.tapping = true;
+  #  libinput.touchpad.naturalScrolling = true;
+  #  desktopManager.gnome.enable = true;
+  #  displayManager.gdm.enable = true;
+  #  displayManager.defaultSession = "gnome";
+  #};
+
   # Configuration GNOME (simple et éducatif)
-  services.gnome = {
-    gnome-shell-extensions = with pkgs.gnomeShellExtensions; [
-      # Extensions utiles pour l'éducation
-      appindicator
-      dash-to-dock
-      desktop-icons-ng
-    ];
+  #services.gnome = {
+  #  gnome-shell-extensions = with pkgs.gnomeShellExtensions; [
+       # Extensions utiles pour l'éducation
+  #    appindicator
+  #    dash-to-dock
+  #    desktop-icons-ng
+  #  ];
+
     # Désactiver les animations pour plus de fluidité
     shellPerformance = {
       animations = false;
       compositing = true;
     };
   };
+
   # Polices supplémentaires
   fonts.packages = with pkgs; [
     dejavu_fonts
@@ -67,6 +70,7 @@
     noto-fonts-emoji
     fira-code
   ];
+
   # =============================================================================
   # 📦 GROUPES D'APPLICATIONS PAR DOMAINE
   # =============================================================================
